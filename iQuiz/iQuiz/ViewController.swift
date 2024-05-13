@@ -9,10 +9,23 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let topics = ["Mathematics", "Marvel Super Heroes", "Science"]
+    // MARK: - Variables
+    let topics: [String] = ["Mathematics", "Marvel Super Heroes", "Science"]
+    let icons: [String] = ["brain", "superhero", "testtube"]
+    let descriptions: [String] = [
+        "How much of a Math wiz are you? Test your knowledge here on our Mathematics Quiz!",
+        "How well do you know your Marvel Super Heroes? Test your knowledge here on our Marvel Super Hero Quiz!",
+        "Are you a Science nerd? Test your knowledge on our Science Quiz!"
+    ]
+    
+    // MARK: - UI Components
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let nib = UINib(nibName: "customCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: customCell.identifier)
         
         // self is whole class instance of ViewController
         // By setting tableView.delegate to self, you're essentially saying, "Hey tableView, I will
@@ -23,8 +36,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         tableView.delegate = self
     }
-
-    @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Table View Delegate and Data Source
     
@@ -37,9 +48,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return topics.count
     }
     
+    // This method is called by the table view when it needs to display a cell for a specific row.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel!.text = topics[indexPath.row]
+        
+        // This line dequeues a reusable cell from the table view's reuse queue. It uses the identifier provided by
+        // customCell.identifier to dequeue a cell of the custom class customCell.
+        let cell = tableView.dequeueReusableCell(withIdentifier: customCell.identifier, for: indexPath) as! customCell // makes cell be of type customCell custom class that we made, if we don't do this cell will just use generic class that doesn't have the cell.title etc that we would want
+        
+        cell.title.text = topics[indexPath.row]
+        cell.icon.image = UIImage(named: icons[indexPath.row])
+        cell.descr.text = descriptions[indexPath.row]
         return cell
     }
     

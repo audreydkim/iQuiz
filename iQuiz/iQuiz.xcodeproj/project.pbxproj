@@ -16,6 +16,8 @@
 		7672A63C2BEDAC09001BB238 /* iQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7672A63B2BEDAC09001BB238 /* iQuizTests.swift */; };
 		7672A6462BEDAC09001BB238 /* iQuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7672A6452BEDAC09001BB238 /* iQuizUITests.swift */; };
 		7672A6482BEDAC09001BB238 /* iQuizUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7672A6472BEDAC09001BB238 /* iQuizUITestsLaunchTests.swift */; };
+		7672A65E2BF1EBBE001BB238 /* customCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7672A65C2BF1EBBE001BB238 /* customCell.swift */; };
+		7672A65F2BF1EBBE001BB238 /* customCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7672A65D2BF1EBBE001BB238 /* customCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		7672A6412BEDAC09001BB238 /* iQuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iQuizUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7672A6452BEDAC09001BB238 /* iQuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iQuizUITests.swift; sourceTree = "<group>"; };
 		7672A6472BEDAC09001BB238 /* iQuizUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iQuizUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7672A65C2BF1EBBE001BB238 /* customCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customCell.swift; sourceTree = "<group>"; };
+		7672A65D2BF1EBBE001BB238 /* customCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = customCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				7672A62D2BEDAC09001BB238 /* Assets.xcassets */,
 				7672A62F2BEDAC09001BB238 /* LaunchScreen.storyboard */,
 				7672A6322BEDAC09001BB238 /* Info.plist */,
+				7672A65C2BF1EBBE001BB238 /* customCell.swift */,
+				7672A65D2BF1EBBE001BB238 /* customCell.xib */,
 			);
 			path = iQuiz;
 			sourceTree = "<group>";
@@ -233,6 +239,7 @@
 			files = (
 				7672A62E2BEDAC09001BB238 /* Assets.xcassets in Resources */,
 				7672A6312BEDAC09001BB238 /* Base in Resources */,
+				7672A65F2BF1EBBE001BB238 /* customCell.xib in Resources */,
 				7672A62C2BEDAC08001BB238 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +267,7 @@
 			files = (
 				7672A6292BEDAC08001BB238 /* ViewController.swift in Sources */,
 				7672A6252BEDAC08001BB238 /* AppDelegate.swift in Sources */,
+				7672A65E2BF1EBBE001BB238 /* customCell.swift in Sources */,
 				7672A6272BEDAC08001BB238 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
