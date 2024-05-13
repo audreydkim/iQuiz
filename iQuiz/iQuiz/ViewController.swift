@@ -14,6 +14,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // this grabs our xib file and outlets
+        //let nib = UINib(nibName:"MyTableViewCell", bundle: nil)
+        
+        // this tells our tableView to register our nib cell
+        //tableView.register(nib, forCellReuseIdentifier: "MyTableViewCell")
+        
         // self is whole class instance of ViewController
         // By setting tableView.delegate to self, you're essentially saying, "Hey tableView, I will
         // handle your delegate methods and interactions, so use me as your delegate." This allows
@@ -23,7 +29,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         tableView.delegate = self
     }
-
+    
+    
+    
+    
+    
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Table View Delegate and Data Source
@@ -39,15 +49,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        //cell.title.text = topics[indexPath.row]
+        //cell.desc.text = topics[indexPath.row]
+        //cell.icon.backgroundColor = .blue
         cell.textLabel!.text = topics[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "quiz")
-        vc.navigationItem.title = topics[indexPath.row]
-        navigationController?.pushViewController(vc, animated: true) // this allows our view to change to our view controller for the quiz we clicked on
+       // let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //let vc = storyboard.instantiateViewController(withIdentifier: "quiz")
+       // vc.navigationItem.title = topics[indexPath.row]
+       // navigationController?.pushViewController(vc, animated: true) // this allows our view to change to our view controller // for the quiz we clicked on
+        
         
     }
     
