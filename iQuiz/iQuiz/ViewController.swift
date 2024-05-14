@@ -23,7 +23,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = "Quizzes"
         let nib = UINib(nibName: "customCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: customCell.identifier)
         
