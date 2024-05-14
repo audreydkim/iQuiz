@@ -21,6 +21,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // MARK: - UI Components
     @IBOutlet weak var tableView: UITableView!
     
+    @IBAction func settingsButton(_ sender: Any) {
+        print("settings button has been pressed")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Quizzes"
@@ -35,6 +39,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // table view as needed.
         tableView.dataSource = self
         tableView.delegate = self
+        
+        // Settings Button
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(openSettings))
+        
     }
     
     // MARK: - Table View Delegate and Data Source
@@ -66,7 +74,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let vc = storyboard.instantiateViewController(withIdentifier: "quiz")
         vc.navigationItem.title = topics[indexPath.row]
         navigationController?.pushViewController(vc, animated: true) // this allows our view to change to our view controller for the quiz we clicked on
-        
     }
     
 }
