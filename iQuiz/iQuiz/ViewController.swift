@@ -22,9 +22,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func settingsButton(_ sender: Any) {
-        let alert = UIAlertController(title: "Settings go here", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Settings go here", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-        NSLog("The \"OK\" alert occured.")
+            return
         }))
         self.present(alert, animated: true, completion: nil)
     }
@@ -34,7 +34,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         title = "Quizzes"
         let nib = UINib(nibName: "customCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: customCell.identifier)
-        
+        let nib2 = UINib(nibName: "QuizViewController", bundle: nil)
+        tableView.register(nib2, forCellReuseIdentifier: QuizViewController.identifier)
         // self is whole class instance of ViewController
         // By setting tableView.delegate to self, you're essentially saying, "Hey tableView, I will
         // handle your delegate methods and interactions, so use me as your delegate." This allows
@@ -74,10 +75,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "quiz")
-        vc.navigationItem.title = topics[indexPath.row]
-        navigationController?.pushViewController(vc, animated: true) // this allows our view to change to our view controller for the quiz we clicked on
+        tableView.deselectRow(at: indexPath, animated: true)        
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "QuizViewController") as? QuizViewController {
+            navigationController?.pushViewController(vc, animated: true) // this allows our view to change to our view controller for the quiz we clicked on
+        }
+         
     }
     
 }
