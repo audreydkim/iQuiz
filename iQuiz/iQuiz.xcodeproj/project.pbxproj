@@ -19,6 +19,7 @@
 		7672A65E2BF1EBBE001BB238 /* customCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7672A65C2BF1EBBE001BB238 /* customCell.swift */; };
 		7672A65F2BF1EBBE001BB238 /* customCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7672A65D2BF1EBBE001BB238 /* customCell.xib */; };
 		7672A6622BF4A198001BB238 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7672A6602BF4A198001BB238 /* QuizViewController.swift */; };
+		7672A6672BFC73B6001BB238 /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7672A6662BFC73B6001BB238 /* FinishViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		7672A65C2BF1EBBE001BB238 /* customCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customCell.swift; sourceTree = "<group>"; };
 		7672A65D2BF1EBBE001BB238 /* customCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = customCell.xib; sourceTree = "<group>"; };
 		7672A6602BF4A198001BB238 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		7672A6662BFC73B6001BB238 /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				7672A65C2BF1EBBE001BB238 /* customCell.swift */,
 				7672A65D2BF1EBBE001BB238 /* customCell.xib */,
 				7672A6602BF4A198001BB238 /* QuizViewController.swift */,
+				7672A6662BFC73B6001BB238 /* FinishViewController.swift */,
 			);
 			path = iQuiz;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				7672A6252BEDAC08001BB238 /* AppDelegate.swift in Sources */,
 				7672A65E2BF1EBBE001BB238 /* customCell.swift in Sources */,
 				7672A6272BEDAC08001BB238 /* SceneDelegate.swift in Sources */,
+				7672A6672BFC73B6001BB238 /* FinishViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

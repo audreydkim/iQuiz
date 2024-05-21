@@ -33,7 +33,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // MARK: - UI Components
     @IBOutlet weak var tableView: UITableView!
-    
     @IBAction func settingsButton(_ sender: Any) {
         let alert = UIAlertController(title: "Settings", message: "Check if Data is Downloaded?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Check Now", style: .default, handler: { _ in

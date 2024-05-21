@@ -106,10 +106,18 @@
                                     <action selector="submit:" destination="sU1-Y5-C1n" eventType="touchUpInside" id="b6e-xI-ast"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCS-QH-HJi">
+                                <rect key="frame" x="164.33333333333334" y="317" width="64.333333333333343" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="t76-Ys-Uii"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="eCS-QH-HJi" firstAttribute="centerY" secondItem="ecm-JE-FaL" secondAttribute="centerY" constant="-97" id="5bC-xA-9I0"/>
+                            <constraint firstItem="eCS-QH-HJi" firstAttribute="centerX" secondItem="ecm-JE-FaL" secondAttribute="centerX" id="5wi-oj-4S4"/>
                             <constraint firstItem="Dwf-YJ-uCB" firstAttribute="centerX" secondItem="ecm-JE-FaL" secondAttribute="centerX" constant="121" id="Dtb-xr-Pqq"/>
                             <constraint firstItem="Dwf-YJ-uCB" firstAttribute="centerY" secondItem="ecm-JE-FaL" secondAttribute="centerY" constant="299.5" id="FGR-qD-JXX"/>
                             <constraint firstItem="mh6-H0-FN4" firstAttribute="centerY" secondItem="ecm-JE-FaL" secondAttribute="centerY" constant="-151" id="Waf-Yd-sPE"/>
@@ -126,10 +134,61 @@
                         <outlet property="AnswerD" destination="U5S-BP-ar0" id="NNz-JV-AJI"/>
                         <outlet property="SubmitButton" destination="Dwf-YJ-uCB" id="eS0-M3-10C"/>
                         <outlet property="displayLabel" destination="mh6-H0-FN4" id="bRl-6J-Fc0"/>
+                        <outlet property="results" destination="eCS-QH-HJi" id="qE5-ld-7kj"/>
+                        <segue destination="HUl-9u-gMN" kind="show" identifier="finished" id="Toj-8Y-E01"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1544.2748091603053" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1529" y="20"/>
+        </scene>
+        <!--Finish View Controller-->
+        <scene sceneID="wXo-F8-AaY">
+            <objects>
+                <viewController storyboardIdentifier="FinishViewController" id="HUl-9u-gMN" customClass="FinishViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lqb-3z-Hcl">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQx-Mc-b4z">
+                                <rect key="frame" x="164" y="348" width="65" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ijx-we-QTg">
+                                <rect key="frame" x="171" y="409" width="51" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLK-tc-szI">
+                                <rect key="frame" x="285" y="726" width="60" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Next"/>
+                                <connections>
+                                    <action selector="goHome:" destination="HUl-9u-gMN" eventType="touchUpInside" id="Mfm-9g-7Vk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vS0-Pa-Lc8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XQx-Mc-b4z" firstAttribute="centerX" secondItem="Lqb-3z-Hcl" secondAttribute="centerX" id="G5W-Cq-WHl"/>
+                            <constraint firstItem="Ijx-we-QTg" firstAttribute="centerX" secondItem="Lqb-3z-Hcl" secondAttribute="centerX" id="MOA-Lm-Syf"/>
+                            <constraint firstItem="Ijx-we-QTg" firstAttribute="centerY" secondItem="Lqb-3z-Hcl" secondAttribute="centerY" id="Y31-Xr-gwy"/>
+                            <constraint firstItem="XQx-Mc-b4z" firstAttribute="centerY" secondItem="Lqb-3z-Hcl" secondAttribute="centerY" constant="-61" id="iNU-cF-QuB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hSb-md-fNf"/>
+                    <connections>
+                        <outlet property="ResultStatement" destination="XQx-Mc-b4z" id="P4A-gw-aQ6"/>
+                        <outlet property="Score" destination="Ijx-we-QTg" id="aNd-9D-Nho"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mfd-Df-4Yt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2234" y="21"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AUL-JD-x82">
