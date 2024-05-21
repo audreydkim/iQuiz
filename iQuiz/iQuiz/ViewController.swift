@@ -86,11 +86,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if let vc = storyboard?.instantiateViewController(withIdentifier: "QuizViewController") as? QuizViewController {
+            vc.data = getData()
+            vc.quizNum = indexPath.row
             navigationController?.pushViewController(vc, animated: true) // this allows our view to change to our view controller for the quiz we clicked on
         }
     }
     
-    // ---------------------------------------------------
+    // MARK: - Fetching Json Data and Saving Locally
     func fetch() {
         NSLog("We fetching")
         DispatchQueue.global().sync {
