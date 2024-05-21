@@ -62,10 +62,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="4eI-08-oON">
-                                <rect key="frame" x="148.66666666666666" y="402.99999999999994" width="95.666666666666657" height="221.33333333333331"/>
+                                <rect key="frame" x="150.33333333333334" y="402.99999999999994" width="92.666666666666657" height="221.33333333333331"/>
                                 <subviews>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8D7-ez-dYJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="95.666666666666671" height="34.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="92.666666666666671" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="AnswerA"/>
                                         <connections>
@@ -73,15 +73,15 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIb-om-oOF">
-                                        <rect key="frame" x="0.0" y="62.333333333333314" width="95.666666666666671" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="62.333333333333314" width="92.666666666666671" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="tinted" title="Answer B"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="AnswerB"/>
                                         <connections>
                                             <action selector="answerChosen:" destination="sU1-Y5-C1n" eventType="touchUpInside" id="1lK-Oc-uGt"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZK-5U-Yep">
-                                        <rect key="frame" x="0.0" y="124.66666666666661" width="95.666666666666671" height="34.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="124.66666666666661" width="92.666666666666671" height="34.333333333333329"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="AnswerC"/>
                                         <connections>
@@ -89,7 +89,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5S-BP-ar0">
-                                        <rect key="frame" x="0.0" y="187" width="95.666666666666671" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="187" width="92.666666666666671" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="AnswerD"/>
                                         <connections>
@@ -98,10 +98,20 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dwf-YJ-uCB" userLabel="Submit">
+                                <rect key="frame" x="278.66666666666669" y="708.33333333333337" width="78" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Submit"/>
+                                <connections>
+                                    <action selector="submit:" destination="sU1-Y5-C1n" eventType="touchUpInside" id="b6e-xI-ast"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="t76-Ys-Uii"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Dwf-YJ-uCB" firstAttribute="centerX" secondItem="ecm-JE-FaL" secondAttribute="centerX" constant="121" id="Dtb-xr-Pqq"/>
+                            <constraint firstItem="Dwf-YJ-uCB" firstAttribute="centerY" secondItem="ecm-JE-FaL" secondAttribute="centerY" constant="299.5" id="FGR-qD-JXX"/>
                             <constraint firstItem="mh6-H0-FN4" firstAttribute="centerY" secondItem="ecm-JE-FaL" secondAttribute="centerY" constant="-151" id="Waf-Yd-sPE"/>
                             <constraint firstItem="mh6-H0-FN4" firstAttribute="centerX" secondItem="ecm-JE-FaL" secondAttribute="centerX" id="bnr-wt-F6x"/>
                             <constraint firstItem="4eI-08-oON" firstAttribute="centerY" secondItem="ecm-JE-FaL" secondAttribute="centerY" constant="87.670000000000002" id="vyT-UF-wG8"/>
@@ -114,6 +124,7 @@
                         <outlet property="AnswerB" destination="LIb-om-oOF" id="eyN-Rk-oNb"/>
                         <outlet property="AnswerC" destination="MZK-5U-Yep" id="rSA-T3-Dwg"/>
                         <outlet property="AnswerD" destination="U5S-BP-ar0" id="NNz-JV-AJI"/>
+                        <outlet property="SubmitButton" destination="Dwf-YJ-uCB" id="eS0-M3-10C"/>
                         <outlet property="displayLabel" destination="mh6-H0-FN4" id="bRl-6J-Fc0"/>
                     </connections>
                 </viewController>

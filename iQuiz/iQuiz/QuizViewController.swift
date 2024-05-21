@@ -14,15 +14,48 @@ class QuizViewController: UIViewController {
     var data: [Quiz] = []
     var quizNum: Int = 0
     var questionNum: Int = 0
-    
+    var currAnswer: Int = -1
     @IBOutlet weak var displayLabel: UILabel!
     @IBOutlet weak var AnswerA: UIButton!
     @IBOutlet weak var AnswerB: UIButton!
     @IBOutlet weak var AnswerC: UIButton!
     @IBOutlet weak var AnswerD: UIButton!
+    @IBOutlet weak var SubmitButton: UIButton!
     
-    @IBAction func answerChosen(_ sender: Any) {
-        NSLog("i love you and you're trying your best")
+    @IBAction func answerChosen(_ sender: UIButton) {
+        
+        SubmitButton.isEnabled = true
+        
+        switch sender {
+        case let button where button.titleLabel!.text! == AnswerA.titleLabel!.text:
+                button.isSelected = true
+                AnswerB.isSelected = false
+                AnswerC.isSelected = false
+                AnswerD.isSelected = false
+                currAnswer = 0
+            case let button where button.titleLabel!.text! == AnswerB.titleLabel!.text:
+                button.isSelected = true
+                AnswerA.isSelected = false
+                AnswerC.isSelected = false
+                AnswerD.isSelected = false
+                currAnswer = 1
+            case let button where button.titleLabel!.text! == AnswerC.titleLabel!.text:
+                button.isSelected = true
+                AnswerA.isSelected = false
+                AnswerB.isSelected = false
+                AnswerD.isSelected = false
+                currAnswer = 2
+            case let button where button.titleLabel!.text! == AnswerD.titleLabel!.text:
+                button.isSelected = true
+                AnswerA.isSelected = false
+                AnswerC.isSelected = false
+                AnswerB.isSelected = false
+                currAnswer = 3
+        default:
+            currAnswer = -1
+            NSLog("Error has occurred")
+        }
+        
     }
     
     override func viewDidLoad() {
@@ -30,6 +63,7 @@ class QuizViewController: UIViewController {
         title = data[quizNum].title + " Quiz"
         displayQuestion()
         displayAnswers()
+        SubmitButton.isEnabled = false
         //AnswerA.titleLabel?.text = "Youre Mother"
         // Do any additional setup after loading the view.
     }
@@ -47,7 +81,10 @@ class QuizViewController: UIViewController {
         }
     }
     
-
+    @IBAction func submit(_ sender: Any) {
+        NSLog("submit")
+    }
+    
 
     // MARK: - Navigation
 

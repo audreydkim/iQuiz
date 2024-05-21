@@ -35,8 +35,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func settingsButton(_ sender: Any) {
-        let alert = UIAlertController(title: "Settings go here", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+        let alert = UIAlertController(title: "Settings", message: "Check if Data is Downloaded?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Check Now", style: .default, handler: { _ in
+            do {
+                try self.fetch()
+                alert.message = "Data is Downloaded"
+            } catch {
+                alert.message = "Error has occured"
+            }
+            self.present(alert, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { _ in
             return
         }))
         self.present(alert, animated: true, completion: nil)
@@ -55,7 +64,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         tableView.delegate = self
         title = "Quizzes"
-        fetch()
+        do {
+            try self.fetch()
+            
+        } catch {
+            NSLog("Error")
+        }
     }
     
     // MARK: - Table View Delegate and Data Source
@@ -93,7 +107,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     // MARK: - Fetching Json Data and Saving Locally
-    func fetch() {
+    func fetch() throws {
         NSLog("We fetching")
         DispatchQueue.global().sync {
             NSLog("Inside global().async")
